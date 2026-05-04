@@ -1,6 +1,3 @@
-# User-specific paths — NEVER commit this
-configs/paths.json
-
 # Model weights and large output files
 output/*
 *.pt

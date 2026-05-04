@@ -1,0 +1,23 @@
+{
+  "_comment": "Copy this file to paths.json and fill in your own paths. paths.json is gitignored.",
+  "data_dir": "/mnt/storage/hitl_experiments/paaws_tuned/",
+  "working_dir": "./output/",
+  "figs_dir": "./figs/",
+  "participants": [
+    "DS_11"
+  ],
+  "_comment_participants": "List of participant/subject IDs (subfolder names under data_dir) to include. null = use all subfolders.",
+  "encoder_type": "simclr_pt",
+  "_comment_encoder_type": "Encoder architecture to use. Built-in: 'simclr_pt'. Register custom types in encoder.py.",
+  "fusion": "early",
+  "_comment_fusion": "'early' or 'late'.",
+  "dataset_config": "./configs/paaws_lab.json",
+  "_comment_dataset_config": "Path to the dataset JSON config (relative to repo root or absolute).",
+  "hparams_config": "./configs/hparams.json",
+  "_comment_hparams_config": "Path to the hyperparameter JSON config.",
+  "_comment_paths": "data_dir must be absolute OR relative to repo root. working_dir, simclr_path, figs_dir can be relative to repo root.",
+  "encoder_paths": {
+    "default": "./models/20260320-130313_simclr.pt"
+  },
+  "_comment_encoder_paths": "Map encoder key -> path to .pt weights file. Keys must match the 'encoders' section in your dataset config. Paths are relative to repo root or absolute. Example with two encoders: {\"body\": \"./models/body.pt\", \"wrist\": \"./models/wrist.pt\"}"
+}

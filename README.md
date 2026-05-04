@@ -1,6 +1,6 @@
 # HITL-HAR: Human-in-the-Loop Incremental Human Activity Recognition
 
-A plug-and-play framework for incrementally teaching a wearable sensor system new human activities with minimal user effort. Built on a frozen SimCLR self-supervised backbone with per-activity binary classifiers.
+A plug-and-play framework for incrementally teaching a wearable sensor system new human activities with human-in-the-loop interactions. 
 
 **Paper**: *Human-in-the-loop Incremental Learning for Human Activity
 Recognition with Multimodal Wearable Sensors* — submitted to IMWUT (ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies)

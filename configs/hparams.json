@@ -1,0 +1,62 @@
+{
+  "_comment": "Hyperparameters and training settings for HITL-HAR. Adjust these to tune behaviour without touching source code.",
+
+  "training": {
+    "seed_head_epochs":       50,
+    "incremental_head_epochs": 20,
+    "retrain_epochs":         20,
+    "learning_rate":          0.001,
+    "retrain_learning_rate":  0.0001,
+    "batch_size":             200,
+    "early_stopping_patience": 10,
+    "focal_gamma":            2.0,
+    "max_class_weight":       10.0
+  },
+
+  "threshold": {
+    "strategy":   "f1",
+    "_comment_strategy": "Currently only 'f1' is supported (maximise F1 on validation PR curve). Reserved for future: 'fixed', 'precision_at_recall'.",
+    "min":        0.20,
+    "max":        0.80,
+    "fallback":   0.50,
+    "seed_nudge_factor": 0.9,
+    "_comment_nudge": "Seed heads are not retrained; their threshold is nudged to mean_p * seed_nudge_factor, clamped to [min, current_threshold]."
+  },
+
+  "cooccurrence": {
+    "fire_pct_threshold": 0.50,
+    "_comment": "A head 'fires' on a new activity's windows if the fraction of windows predicted positive exceeds this value."
+  },
+
+  "sensor_gating": {
+    "gate_scale": 4.0,
+    "_comment": "Steepness of the sigmoid used to convert hint weights [0,1] into gate values. Higher = sharper cutoff."
+  },
+
+  "replay_buffer": {
+    "max_positives_per_activity": null,
+    "_comment": "null = unlimited. Set an integer to cap stored positives per activity (useful for memory-constrained settings)."
+  },
+
+  "hitl_simulation": {
+    "_comment": "Controls how the human-in-the-loop interaction is simulated during E2/E3. In a real deployment these would come from actual user input.",
+    "confirmation_source":   "ground_truth",
+    "_comment_confirmation": "'ground_truth' uses dataset labels to confirm/deny co-occurrences. Reserved for future: 'noisy' (add label noise), 'conservative' (user only confirms high-confidence detections).",
+    "label_noise_rate":      0.0,
+    "_comment_noise":        "Probability of flipping a confirmed co-occurrence (0.0 = perfect human). Only used when confirmation_source='noisy'.",
+    "me_source":             "ground_truth",
+    "_comment_me":           "'ground_truth' reads mutual exclusions from the dataset config. Reserved for future: 'none' (user never marks ME).",
+    "annotation_budget":     null,
+    "_comment_budget":       "null = annotate all windows. Integer = max windows the simulated user reviews per activity addition. Unused for now."
+  },
+
+  "ablation": {
+    "conditions": [
+      {"name": "Baseline",                    "sensor_gating": false, "me": false, "retraining": false},
+      {"name": "Full HITL",                   "sensor_gating": true,  "me": true,  "retraining": true },
+      {"name": "Full HITL w/o ME",            "sensor_gating": true,  "me": false, "retraining": true },
+      {"name": "Full HITL w/o Retraining",    "sensor_gating": true,  "me": true,  "retraining": false},
+      {"name": "Full HITL w/o Sensor Gating", "sensor_gating": false, "me": true,  "retraining": true }
+    ]
+  }
+}

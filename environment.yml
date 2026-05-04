@@ -1,0 +1,27 @@
+name: hitl_har
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+
+  # Deep learning
+  - pytorch>=2.0
+  - torchvision
+  - torchaudio
+  - cpuonly  # remove this line if you have a CUDA GPU; install cuda toolkit separately
+
+  # Scientific Python
+  - numpy>=1.24
+  - scipy>=1.10
+  - scikit-learn>=1.3
+
+  # Visualisation
+  - matplotlib>=3.7
+  - umap-learn>=0.5
+
+  - pip:
+      - tqdm

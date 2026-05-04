@@ -1,0 +1,1139 @@
+Loading dataset...
+Label mapping:
+0: Brushing_Teeth
+1: Cycling_Active_Pedaling_Stationary_Bike
+2: Folding_Clothes
+3: Ironing
+4: Kneeling_With_Movement
+5: Loading_Unloading_Washing_Machine_Dryer
+6: Lying_Still
+7: Lying_With_Movement
+8: Organizing_Shelf_Cabinet
+9: PA_Type_Other
+10: PA_Type_Too_Complex
+11: PA_Type_Video_Unavailable_Indecipherable
+12: Puttering_Around
+13: Putting_Clothes_Away
+14: Sitting_With_Movement
+15: Standing_Still
+16: Standing_With_Movement
+17: Sweeping
+18: Synchronizing_Sensors
+19: Vacuuming
+20: Walking
+21: Walking_Down_Stairs
+22: Walking_Fast
+23: Walking_Slow
+24: Walking_Up_Stairs
+25: Washing_Hands
+26: Watering_Plants
+
+Processing DS_10
+
+Final dataset sizes:
+Train: (145737, 100, 5, 3) (145737,)
+Val  : (145737, 100, 5, 3) (145737,)
+Test : (145773, 100, 5, 3) (145773,)
+  Activities to add: 68
+
+Loading SimCLR backbone...
+
+Precomputing encoder features...
+  Train:(145737, 5, 96)  Val:(145737, 5, 96)  Test:(145773, 5, 96)
+
+#################################################################
+ABLATION: Baseline
+  sensor_gating=False  ME=False  retraining=False
+#################################################################
+Loading state from /home/hle5/HITL_HAR/output/DS_10_e1_state_late_fl.pkl...
+  Feature dim: D=96
+  Loaded 'Walking' (late)
+  Loaded 'Standing_Still' (late)
+
+[08/68] 'Walking_Fast' (val:5 tr:5)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(1) F1:0.7273 | Co-occ F1:1.000 | Retrains:0
+
+[10/68] 'Folding_Clothes' (val:245 tr:245)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(2) F1:0.6273 | Co-occ F1:0.000 | Retrains:0
+
+[13/68] 'Brushing_Teeth' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(3) F1:0.6004 | Co-occ F1:0.000 | Retrains:0
+
+[19/68] 'Organizing_Shelf_Cabinet' (val:256 tr:256)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(4) F1:0.5113 | Co-occ F1:0.000 | Retrains:0
+
+[20/68] 'Putting_Clothes_Away' (val:214 tr:214)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(5) F1:0.4845 | Co-occ F1:0.000 | Retrains:0
+
+[21/68] 'Lying_With_Movement' (val:794 tr:794)
+
+  Co-occurrence GT   : []
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(6) F1:0.5170 | Co-occ F1:0.000 | Retrains:0
+
+[23/68] 'Kneeling_With_Movement' (val:295 tr:295)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(7) F1:0.5103 | Co-occ F1:0.000 | Retrains:0
+
+[26/68] 'Walking_Slow' (val:2 tr:2)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(8) F1:0.5298 | Co-occ F1:1.000 | Retrains:0
+
+[28/68] 'Lying_Still' (val:135 tr:135)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  Seeds F1:0.0762 | Activities(9) F1:0.4920 | Co-occ F1:0.000 | Retrains:0
+
+[32/68] 'Vacuuming' (val:343 tr:343)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(10) F1:0.4984 | Co-occ F1:1.000 | Retrains:0
+
+[36/68] 'Sitting_With_Movement' (val:86904 tr:86904)
+
+  Co-occurrence GT   : ['Sitting_Still']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Sitting_Still']
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(11) F1:0.5374 | Co-occ F1:0.000 | Retrains:0
+
+[38/68] 'Sweeping' (val:146 tr:146)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(12) F1:0.5445 | Co-occ F1:1.000 | Retrains:0
+
+[50/68] 'Ironing' (val:143 tr:143)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(13) F1:0.5426 | Co-occ F1:0.000 | Retrains:0
+
+[52/68] 'Cycling_Active_Pedaling_Stationary_Bike' (val:4117 tr:4117)
+
+  Co-occurrence GT   : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(14) F1:0.5720 | Co-occ F1:0.000 | Retrains:0
+
+[55/68] 'Standing_With_Movement' (val:6360 tr:6360)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(15) F1:0.5655 | Co-occ F1:0.000 | Retrains:0
+
+[59/68] 'Washing_Hands' (val:314 tr:314)
+
+  Co-occurrence GT   : ['Standing_Still', 'Standing_With_Movement']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still', 'Standing_With_Movement']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(16) F1:0.5768 | Co-occ F1:0.000 | Retrains:0
+
+[63/68] 'Walking_Down_Stairs' (val:57 tr:57)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(17) F1:0.5710 | Co-occ F1:1.000 | Retrains:0
+
+[64/68] 'Walking_Up_Stairs' (val:65 tr:65)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(18) F1:0.5756 | Co-occ F1:1.000 | Retrains:0
+
+[65/68] 'Watering_Plants' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_With_Movement', 'Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(19) F1:0.5528 | Co-occ F1:1.000 | Retrains:0
+
+[Final] TEST — All Weighted F1:0.8239 | Seeds Weighted F1:0.1254 | Activities(19) Weighted F1:0.8756
+
+#################################################################
+ABLATION: Full HITL
+  sensor_gating=True  ME=True  retraining=True
+#################################################################
+Loading state from /home/hle5/HITL_HAR/output/DS_10_e1_state_late_fl.pkl...
+  Feature dim: D=96
+  Loaded 'Walking' (late)
+  Loaded 'Standing_Still' (late)
+
+[08/68] 'Walking_Fast' (val:5 tr:5)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(1) F1:0.7500 | Co-occ F1:1.000 | Retrains:0
+
+[10/68] 'Folding_Clothes' (val:245 tr:245)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6638 F1:0.0006
+  Combined: 5879 samples (273 pos, 5606 neg)
+  [Standing_Still] After  — AUC:0.6593 F1:0.0006 (ΔAUC:-0.0045)
+  [Walking] Before — AUC:0.9395 F1:0.2056
+  Combined: 5879 samples (5601 pos, 278 neg)
+  [Walking] After  — AUC:0.9321 F1:0.2253 (ΔAUC:-0.0074)
+  Seeds F1:0.0826 | Activities(2) F1:0.6470 | Co-occ F1:0.000 | Retrains:2
+
+[13/68] 'Brushing_Teeth' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6593 F1:0.0006
+  Combined: 6203 samples (352 pos, 5851 neg)
+  [Standing_Still] After  — AUC:0.6490 F1:0.0005 (ΔAUC:-0.0102)
+  [Walking] Before — AUC:0.9321 F1:0.2253
+  Combined: 5958 samples (5601 pos, 357 neg)
+  [Walking] After  — AUC:0.9346 F1:0.4686 (ΔAUC:+0.0025)
+  Seeds F1:0.1027 | Activities(3) F1:0.6091 | Co-occ F1:0.000 | Retrains:4
+
+[19/68] 'Organizing_Shelf_Cabinet' (val:256 tr:256)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6490 F1:0.0005
+  Combined: 6538 samples (608 pos, 5930 neg)
+  [Standing_Still] After  — AUC:0.6292 F1:0.0005 (ΔAUC:-0.0198)
+  [Walking] Before — AUC:0.9346 F1:0.4686
+  Combined: 6214 samples (5601 pos, 613 neg)
+  [Walking] After  — AUC:0.9358 F1:0.4649 (ΔAUC:+0.0012)
+  Seeds F1:0.1631 | Activities(4) F1:0.5119 | Co-occ F1:0.000 | Retrains:6
+
+[20/68] 'Putting_Clothes_Away' (val:214 tr:214)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6292 F1:0.0005
+  Combined: 7008 samples (822 pos, 6186 neg)
+  [Standing_Still] After  — AUC:0.6052 F1:0.0005 (ΔAUC:-0.0240)
+  [Walking] Before — AUC:0.9358 F1:0.4649
+  Combined: 6428 samples (5601 pos, 827 neg)
+  [Walking] After  — AUC:0.9370 F1:0.4868 (ΔAUC:+0.0011)
+  Seeds F1:0.1683 | Activities(5) F1:0.4856 | Co-occ F1:0.000 | Retrains:8
+
+[21/68] 'Lying_With_Movement' (val:794 tr:794)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6052 F1:0.0005
+  Combined: 8016 samples (822 pos, 7194 neg)
+  [Standing_Still] After  — AUC:0.5953 F1:0.0004 (ΔAUC:-0.0099)
+  Seeds F1:0.1700 | Activities(6) F1:0.5168 | Co-occ F1:0.000 | Retrains:9
+
+[23/68] 'Kneeling_With_Movement' (val:295 tr:295)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.5953 F1:0.0004
+  Combined: 8311 samples (822 pos, 7489 neg)
+  [Standing_Still] After  — AUC:0.6147 F1:0.0004 (ΔAUC:+0.0194)
+  Seeds F1:0.1786 | Activities(7) F1:0.5198 | Co-occ F1:0.000 | Retrains:10
+
+[26/68] 'Walking_Slow' (val:2 tr:2)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.1786 | Activities(8) F1:0.4548 | Co-occ F1:1.000 | Retrains:10
+
+[28/68] 'Lying_Still' (val:135 tr:135)
+
+  Co-occurrence GT   : []
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.1786 | Activities(9) F1:0.4212 | Co-occ F1:0.000 | Retrains:10
+
+[32/68] 'Vacuuming' (val:343 tr:343)
+  Suppressed 'Walking' (conflict with 'Standing_Still', prob: 0.415)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Standing_Still', 'Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6147 F1:0.0004
+  Combined: 8791 samples (822 pos, 7969 neg)
+  [Standing_Still] After  — AUC:0.6220 F1:0.0004 (ΔAUC:+0.0073)
+  Seeds F1:0.1870 | Activities(10) F1:0.4316 | Co-occ F1:0.667 | Retrains:11
+
+[36/68] 'Sitting_With_Movement' (val:86904 tr:86904)
+
+  Co-occurrence GT   : ['Sitting_Still']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Sitting_Still']
+  False pos (FP)     : []
+  Seeds F1:0.1870 | Activities(11) F1:0.4769 | Co-occ F1:0.000 | Retrains:11
+
+[38/68] 'Sweeping' (val:146 tr:146)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Walking']
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6220 F1:0.0004
+  Combined: 95841 samples (822 pos, 95019 neg)
+  [Standing_Still] After  — AUC:0.7955 F1:0.0008 (ΔAUC:+0.1735)
+  Seeds F1:0.2464 | Activities(12) F1:0.4869 | Co-occ F1:0.000 | Retrains:12
+
+[50/68] 'Ironing' (val:143 tr:143)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : ['Standing_Still']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.2464 | Activities(13) F1:0.4805 | Co-occ F1:1.000 | Retrains:12
+
+[52/68] 'Cycling_Active_Pedaling_Stationary_Bike' (val:4117 tr:4117)
+
+  Co-occurrence GT   : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  False pos (FP)     : ['Walking']
+  [Walking] Before — AUC:0.9370 F1:0.4868
+  Combined: 99307 samples (5601 pos, 93706 neg)
+  [Walking] After  — AUC:0.9821 F1:0.4122 (ΔAUC:+0.0451)
+  Seeds F1:0.3319 | Activities(14) F1:0.5144 | Co-occ F1:0.000 | Retrains:13
+
+[55/68] 'Standing_With_Movement' (val:6360 tr:6360)
+
+  Co-occurrence GT   : []
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3319 | Activities(15) F1:0.5121 | Co-occ F1:0.000 | Retrains:13
+
+[59/68] 'Washing_Hands' (val:314 tr:314)
+
+  Co-occurrence GT   : ['Standing_Still', 'Standing_With_Movement']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still', 'Standing_With_Movement']
+  False pos (FP)     : []
+  [Standing_Still] Before — AUC:0.7955 F1:0.0008
+  Combined: 106775 samples (1136 pos, 105639 neg)
+  [Standing_Still] After  — AUC:0.8638 F1:0.0005 (ΔAUC:+0.0682)
+  [Standing_With_Movement] Before — AUC:0.9526 F1:0.4510
+  Combined: 105981 samples (6674 pos, 99307 neg)
+  [Standing_With_Movement] After  — AUC:0.9528 F1:0.3621 (ΔAUC:+0.0002)
+  Seeds F1:0.3845 | Activities(16) F1:0.5238 | Co-occ F1:0.000 | Retrains:15
+
+[63/68] 'Walking_Down_Stairs' (val:57 tr:57)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3845 | Activities(17) F1:0.5257 | Co-occ F1:1.000 | Retrains:15
+
+[64/68] 'Walking_Up_Stairs' (val:65 tr:65)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3845 | Activities(18) F1:0.5307 | Co-occ F1:1.000 | Retrains:15
+
+[65/68] 'Watering_Plants' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_With_Movement', 'Walking']
+  Fired heads        : ['Standing_With_Movement', 'Walking']
+  Confirmed (TP)     : ['Standing_With_Movement', 'Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3845 | Activities(19) F1:0.5058 | Co-occ F1:1.000 | Retrains:15
+
+[Final] TEST — All Weighted F1:0.8466 | Seeds Weighted F1:0.4510 | Activities(19) Weighted F1:0.8759
+
+#################################################################
+ABLATION: Full HITL w/o ME
+  sensor_gating=True  ME=False  retraining=True
+#################################################################
+Loading state from /home/hle5/HITL_HAR/output/DS_10_e1_state_late_fl.pkl...
+  Feature dim: D=96
+  Loaded 'Walking' (late)
+  Loaded 'Standing_Still' (late)
+
+[08/68] 'Walking_Fast' (val:5 tr:5)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(1) F1:0.7500 | Co-occ F1:1.000 | Retrains:0
+
+[10/68] 'Folding_Clothes' (val:245 tr:245)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6638 F1:0.0006
+  Combined: 5879 samples (273 pos, 5606 neg)
+  [Standing_Still] After  — AUC:0.6591 F1:0.0006 (ΔAUC:-0.0047)
+  [Walking] Before — AUC:0.9395 F1:0.2056
+  Combined: 5879 samples (5601 pos, 278 neg)
+  [Walking] After  — AUC:0.9330 F1:0.2251 (ΔAUC:-0.0065)
+  Seeds F1:0.0826 | Activities(2) F1:0.6503 | Co-occ F1:0.000 | Retrains:2
+
+[13/68] 'Brushing_Teeth' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6591 F1:0.0006
+  Combined: 6203 samples (352 pos, 5851 neg)
+  [Standing_Still] After  — AUC:0.6484 F1:0.0005 (ΔAUC:-0.0107)
+  [Walking] Before — AUC:0.9330 F1:0.2251
+  Combined: 5958 samples (5601 pos, 357 neg)
+  [Walking] After  — AUC:0.9345 F1:0.4691 (ΔAUC:+0.0016)
+  Seeds F1:0.0953 | Activities(3) F1:0.5943 | Co-occ F1:0.000 | Retrains:4
+
+[19/68] 'Organizing_Shelf_Cabinet' (val:256 tr:256)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6484 F1:0.0005
+  Combined: 6538 samples (608 pos, 5930 neg)
+  [Standing_Still] After  — AUC:0.6299 F1:0.0005 (ΔAUC:-0.0184)
+  [Walking] Before — AUC:0.9345 F1:0.4691
+  Combined: 6214 samples (5601 pos, 613 neg)
+  [Walking] After  — AUC:0.9354 F1:0.4629 (ΔAUC:+0.0009)
+  Seeds F1:0.1556 | Activities(4) F1:0.5140 | Co-occ F1:0.000 | Retrains:6
+
+[20/68] 'Putting_Clothes_Away' (val:214 tr:214)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6299 F1:0.0005
+  Combined: 7008 samples (822 pos, 6186 neg)
+  [Standing_Still] After  — AUC:0.6048 F1:0.0004 (ΔAUC:-0.0251)
+  [Walking] Before — AUC:0.9354 F1:0.4629
+  Combined: 6428 samples (5601 pos, 827 neg)
+  [Walking] After  — AUC:0.9369 F1:0.4887 (ΔAUC:+0.0014)
+  Seeds F1:0.1633 | Activities(5) F1:0.4816 | Co-occ F1:0.000 | Retrains:8
+
+[21/68] 'Lying_With_Movement' (val:794 tr:794)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6048 F1:0.0004
+  Combined: 8016 samples (822 pos, 7194 neg)
+  [Standing_Still] After  — AUC:0.5897 F1:0.0004 (ΔAUC:-0.0152)
+  Seeds F1:0.1633 | Activities(6) F1:0.5148 | Co-occ F1:0.000 | Retrains:9
+
+[23/68] 'Kneeling_With_Movement' (val:295 tr:295)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.5897 F1:0.0004
+  Combined: 8311 samples (822 pos, 7489 neg)
+  [Standing_Still] After  — AUC:0.6082 F1:0.0004 (ΔAUC:+0.0186)
+  Seeds F1:0.1763 | Activities(7) F1:0.5057 | Co-occ F1:0.000 | Retrains:10
+
+[26/68] 'Walking_Slow' (val:2 tr:2)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.1763 | Activities(8) F1:0.4617 | Co-occ F1:1.000 | Retrains:10
+
+[28/68] 'Lying_Still' (val:135 tr:135)
+
+  Co-occurrence GT   : []
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.1763 | Activities(9) F1:0.4252 | Co-occ F1:0.000 | Retrains:10
+
+[32/68] 'Vacuuming' (val:343 tr:343)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Standing_Still', 'Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6082 F1:0.0004
+  Combined: 8791 samples (822 pos, 7969 neg)
+  [Standing_Still] After  — AUC:0.6246 F1:0.0004 (ΔAUC:+0.0164)
+  Seeds F1:0.1796 | Activities(10) F1:0.4398 | Co-occ F1:0.667 | Retrains:11
+
+[36/68] 'Sitting_With_Movement' (val:86904 tr:86904)
+
+  Co-occurrence GT   : ['Sitting_Still']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Sitting_Still']
+  False pos (FP)     : []
+  Seeds F1:0.1796 | Activities(11) F1:0.4843 | Co-occ F1:0.000 | Retrains:11
+
+[38/68] 'Sweeping' (val:146 tr:146)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Standing_Still', 'Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6246 F1:0.0004
+  Combined: 95841 samples (822 pos, 95019 neg)
+  [Standing_Still] After  — AUC:0.7891 F1:0.0007 (ΔAUC:+0.1644)
+  Seeds F1:0.2343 | Activities(12) F1:0.4956 | Co-occ F1:0.667 | Retrains:12
+
+[50/68] 'Ironing' (val:143 tr:143)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : ['Standing_Still']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.2343 | Activities(13) F1:0.4977 | Co-occ F1:1.000 | Retrains:12
+
+[52/68] 'Cycling_Active_Pedaling_Stationary_Bike' (val:4117 tr:4117)
+
+  Co-occurrence GT   : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  False pos (FP)     : ['Walking']
+  [Walking] Before — AUC:0.9369 F1:0.4887
+  Combined: 99307 samples (5601 pos, 93706 neg)
+  [Walking] After  — AUC:0.9822 F1:0.4106 (ΔAUC:+0.0453)
+  Seeds F1:0.3190 | Activities(14) F1:0.5308 | Co-occ F1:0.000 | Retrains:13
+
+[55/68] 'Standing_With_Movement' (val:6360 tr:6360)
+
+  Co-occurrence GT   : []
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3190 | Activities(15) F1:0.5281 | Co-occ F1:0.000 | Retrains:13
+
+[59/68] 'Washing_Hands' (val:314 tr:314)
+
+  Co-occurrence GT   : ['Standing_Still', 'Standing_With_Movement']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still', 'Standing_With_Movement']
+  False pos (FP)     : []
+  [Standing_Still] Before — AUC:0.7891 F1:0.0007
+  Combined: 106775 samples (1136 pos, 105639 neg)
+  [Standing_Still] After  — AUC:0.8687 F1:0.0005 (ΔAUC:+0.0797)
+  [Standing_With_Movement] Before — AUC:0.9523 F1:0.4433
+  Combined: 105981 samples (6674 pos, 99307 neg)
+  [Standing_With_Movement] After  — AUC:0.9526 F1:0.3547 (ΔAUC:+0.0004)
+  Seeds F1:0.3720 | Activities(16) F1:0.5353 | Co-occ F1:0.000 | Retrains:15
+
+[63/68] 'Walking_Down_Stairs' (val:57 tr:57)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3720 | Activities(17) F1:0.5354 | Co-occ F1:1.000 | Retrains:15
+
+[64/68] 'Walking_Up_Stairs' (val:65 tr:65)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3720 | Activities(18) F1:0.5408 | Co-occ F1:1.000 | Retrains:15
+
+[65/68] 'Watering_Plants' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_With_Movement', 'Walking']
+  Fired heads        : ['Standing_With_Movement', 'Walking']
+  Confirmed (TP)     : ['Standing_With_Movement', 'Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3720 | Activities(19) F1:0.5215 | Co-occ F1:1.000 | Retrains:15
+
+[Final] TEST — All Weighted F1:0.8462 | Seeds Weighted F1:0.4363 | Activities(19) Weighted F1:0.8765
+
+#################################################################
+ABLATION: Full HITL w/o Retraining
+  sensor_gating=True  ME=True  retraining=False
+#################################################################
+Loading state from /home/hle5/HITL_HAR/output/DS_10_e1_state_late_fl.pkl...
+  Feature dim: D=96
+  Loaded 'Walking' (late)
+  Loaded 'Standing_Still' (late)
+
+[08/68] 'Walking_Fast' (val:5 tr:5)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(1) F1:0.0000 | Co-occ F1:1.000 | Retrains:0
+
+[10/68] 'Folding_Clothes' (val:245 tr:245)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(2) F1:0.2652 | Co-occ F1:0.000 | Retrains:0
+
+[13/68] 'Brushing_Teeth' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(3) F1:0.3435 | Co-occ F1:0.000 | Retrains:0
+
+[19/68] 'Organizing_Shelf_Cabinet' (val:256 tr:256)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(4) F1:0.3172 | Co-occ F1:0.000 | Retrains:0
+
+[20/68] 'Putting_Clothes_Away' (val:214 tr:214)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(5) F1:0.3356 | Co-occ F1:0.000 | Retrains:0
+
+[21/68] 'Lying_With_Movement' (val:794 tr:794)
+
+  Co-occurrence GT   : []
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(6) F1:0.3946 | Co-occ F1:0.000 | Retrains:0
+
+[23/68] 'Kneeling_With_Movement' (val:295 tr:295)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(7) F1:0.4053 | Co-occ F1:0.000 | Retrains:0
+
+[26/68] 'Walking_Slow' (val:2 tr:2)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(8) F1:0.3796 | Co-occ F1:1.000 | Retrains:0
+
+[28/68] 'Lying_Still' (val:135 tr:135)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  Seeds F1:0.0762 | Activities(9) F1:0.3572 | Co-occ F1:0.000 | Retrains:0
+
+[32/68] 'Vacuuming' (val:343 tr:343)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(10) F1:0.3781 | Co-occ F1:1.000 | Retrains:0
+
+[36/68] 'Sitting_With_Movement' (val:86904 tr:86904)
+
+  Co-occurrence GT   : ['Sitting_Still']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Sitting_Still']
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(11) F1:0.4283 | Co-occ F1:0.000 | Retrains:0
+
+[38/68] 'Sweeping' (val:146 tr:146)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(12) F1:0.4374 | Co-occ F1:1.000 | Retrains:0
+
+[50/68] 'Ironing' (val:143 tr:143)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(13) F1:0.4411 | Co-occ F1:0.000 | Retrains:0
+
+[52/68] 'Cycling_Active_Pedaling_Stationary_Bike' (val:4117 tr:4117)
+
+  Co-occurrence GT   : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(14) F1:0.4775 | Co-occ F1:0.000 | Retrains:0
+
+[55/68] 'Standing_With_Movement' (val:6360 tr:6360)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(15) F1:0.4783 | Co-occ F1:0.000 | Retrains:0
+
+[59/68] 'Washing_Hands' (val:314 tr:314)
+
+  Co-occurrence GT   : ['Standing_Still', 'Standing_With_Movement']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still', 'Standing_With_Movement']
+  False pos (FP)     : ['Walking']
+  Seeds F1:0.0762 | Activities(16) F1:0.4949 | Co-occ F1:0.000 | Retrains:0
+
+[63/68] 'Walking_Down_Stairs' (val:57 tr:57)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(17) F1:0.4975 | Co-occ F1:1.000 | Retrains:0
+
+[64/68] 'Walking_Up_Stairs' (val:65 tr:65)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(18) F1:0.5004 | Co-occ F1:1.000 | Retrains:0
+
+[65/68] 'Watering_Plants' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_With_Movement', 'Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(19) F1:0.4809 | Co-occ F1:1.000 | Retrains:0
+
+[Final] TEST — All Weighted F1:0.8274 | Seeds Weighted F1:0.1254 | Activities(19) Weighted F1:0.8793
+
+#################################################################
+ABLATION: Full HITL w/o Sensor Gating
+  sensor_gating=False  ME=True  retraining=True
+#################################################################
+Loading state from /home/hle5/HITL_HAR/output/DS_10_e1_state_late_fl.pkl...
+  Feature dim: D=96
+  Loaded 'Walking' (late)
+  Loaded 'Standing_Still' (late)
+
+[08/68] 'Walking_Fast' (val:5 tr:5)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.0762 | Activities(1) F1:0.8000 | Co-occ F1:1.000 | Retrains:0
+
+[10/68] 'Folding_Clothes' (val:245 tr:245)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6638 F1:0.0006
+  Combined: 5879 samples (273 pos, 5606 neg)
+  [Standing_Still] After  — AUC:0.6590 F1:0.0006 (ΔAUC:-0.0049)
+  [Walking] Before — AUC:0.9395 F1:0.2056
+  Combined: 5879 samples (5601 pos, 278 neg)
+  [Walking] After  — AUC:0.9339 F1:0.4643 (ΔAUC:-0.0056)
+  Seeds F1:0.1090 | Activities(2) F1:0.6851 | Co-occ F1:0.000 | Retrains:2
+
+[13/68] 'Brushing_Teeth' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : []
+  [Standing_Still] Before — AUC:0.6590 F1:0.0006
+  Combined: 6203 samples (352 pos, 5851 neg)
+  [Standing_Still] After  — AUC:0.6485 F1:0.0005 (ΔAUC:-0.0105)
+  Seeds F1:0.1092 | Activities(3) F1:0.6430 | Co-occ F1:0.000 | Retrains:3
+
+[19/68] 'Organizing_Shelf_Cabinet' (val:256 tr:256)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : ['Walking']
+  [Standing_Still] Before — AUC:0.6485 F1:0.0005
+  Combined: 6538 samples (608 pos, 5930 neg)
+  [Standing_Still] After  — AUC:0.6288 F1:0.0005 (ΔAUC:-0.0197)
+  [Walking] Before — AUC:0.9339 F1:0.4643
+  Combined: 6214 samples (5601 pos, 613 neg)
+  [Walking] After  — AUC:0.9358 F1:0.4560 (ΔAUC:+0.0020)
+  Seeds F1:0.1722 | Activities(4) F1:0.5364 | Co-occ F1:0.000 | Retrains:5
+
+[20/68] 'Putting_Clothes_Away' (val:214 tr:214)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still']
+  False pos (FP)     : []
+  [Standing_Still] Before — AUC:0.6288 F1:0.0005
+  Combined: 7008 samples (822 pos, 6186 neg)
+  [Standing_Still] After  — AUC:0.6022 F1:0.0005 (ΔAUC:-0.0266)
+  Seeds F1:0.1747 | Activities(5) F1:0.5106 | Co-occ F1:0.000 | Retrains:6
+
+[21/68] 'Lying_With_Movement' (val:794 tr:794)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6022 F1:0.0005
+  Combined: 8016 samples (822 pos, 7194 neg)
+  [Standing_Still] After  — AUC:0.6016 F1:0.0004 (ΔAUC:-0.0006)
+  Seeds F1:0.1761 | Activities(6) F1:0.5413 | Co-occ F1:0.000 | Retrains:7
+
+[23/68] 'Kneeling_With_Movement' (val:295 tr:295)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6016 F1:0.0004
+  Combined: 8311 samples (822 pos, 7489 neg)
+  [Standing_Still] After  — AUC:0.5939 F1:0.0004 (ΔAUC:-0.0078)
+  Seeds F1:0.1763 | Activities(7) F1:0.5381 | Co-occ F1:0.000 | Retrains:8
+
+[26/68] 'Walking_Slow' (val:2 tr:2)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.1763 | Activities(8) F1:0.4709 | Co-occ F1:1.000 | Retrains:8
+
+[28/68] 'Lying_Still' (val:135 tr:135)
+
+  Co-occurrence GT   : []
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.5939 F1:0.0004
+  Combined: 8448 samples (822 pos, 7626 neg)
+  [Standing_Still] After  — AUC:0.6207 F1:0.0004 (ΔAUC:+0.0268)
+  Seeds F1:0.1921 | Activities(9) F1:0.4345 | Co-occ F1:0.000 | Retrains:9
+
+[32/68] 'Vacuuming' (val:343 tr:343)
+  Suppressed 'Walking' (conflict with 'Standing_Still', prob: 0.457)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Standing_Still', 'Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6207 F1:0.0004
+  Combined: 8791 samples (822 pos, 7969 neg)
+  [Standing_Still] After  — AUC:0.6230 F1:0.0004 (ΔAUC:+0.0023)
+  Seeds F1:0.1936 | Activities(10) F1:0.4452 | Co-occ F1:0.667 | Retrains:10
+
+[36/68] 'Sitting_With_Movement' (val:86904 tr:86904)
+
+  Co-occurrence GT   : ['Sitting_Still']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Sitting_Still']
+  False pos (FP)     : []
+  Seeds F1:0.1936 | Activities(11) F1:0.4892 | Co-occ F1:0.000 | Retrains:10
+
+[38/68] 'Sweeping' (val:146 tr:146)
+  Suppressed 'Walking' (conflict with 'Standing_Still', prob: 0.369)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Standing_Still', 'Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : ['Standing_Still']
+  [Standing_Still] Before — AUC:0.6230 F1:0.0004
+  Combined: 95841 samples (822 pos, 95019 neg)
+  [Standing_Still] After  — AUC:0.7924 F1:0.0007 (ΔAUC:+0.1695)
+  Seeds F1:0.2493 | Activities(12) F1:0.5011 | Co-occ F1:0.667 | Retrains:11
+
+[50/68] 'Ironing' (val:143 tr:143)
+
+  Co-occurrence GT   : ['Standing_Still']
+  Fired heads        : ['Standing_Still']
+  Confirmed (TP)     : ['Standing_Still']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.2493 | Activities(13) F1:0.5022 | Co-occ F1:1.000 | Retrains:11
+
+[52/68] 'Cycling_Active_Pedaling_Stationary_Bike' (val:4117 tr:4117)
+
+  Co-occurrence GT   : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Cycling_Active_Pedaling_Regular_Bicycle']
+  False pos (FP)     : ['Walking']
+  [Walking] Before — AUC:0.9358 F1:0.4560
+  Combined: 99307 samples (5601 pos, 93706 neg)
+  [Walking] After  — AUC:0.9821 F1:0.4072 (ΔAUC:+0.0462)
+  Seeds F1:0.3237 | Activities(14) F1:0.5347 | Co-occ F1:0.000 | Retrains:12
+
+[55/68] 'Standing_With_Movement' (val:6360 tr:6360)
+
+  Co-occurrence GT   : []
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3237 | Activities(15) F1:0.5309 | Co-occ F1:0.000 | Retrains:12
+
+[59/68] 'Washing_Hands' (val:314 tr:314)
+
+  Co-occurrence GT   : ['Standing_Still', 'Standing_With_Movement']
+  Fired heads        : []
+  Confirmed (TP)     : []
+  Missed    (FN)     : ['Standing_Still', 'Standing_With_Movement']
+  False pos (FP)     : []
+  [Standing_Still] Before — AUC:0.7924 F1:0.0007
+  Combined: 106775 samples (1136 pos, 105639 neg)
+  [Standing_Still] After  — AUC:0.8661 F1:0.0005 (ΔAUC:+0.0737)
+  [Standing_With_Movement] Before — AUC:0.9502 F1:0.4058
+  Combined: 105981 samples (6674 pos, 99307 neg)
+  [Standing_With_Movement] After  — AUC:0.9493 F1:0.3584 (ΔAUC:-0.0009)
+  Seeds F1:0.3719 | Activities(16) F1:0.5421 | Co-occ F1:0.000 | Retrains:14
+
+[63/68] 'Walking_Down_Stairs' (val:57 tr:57)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3719 | Activities(17) F1:0.5411 | Co-occ F1:1.000 | Retrains:14
+
+[64/68] 'Walking_Up_Stairs' (val:65 tr:65)
+
+  Co-occurrence GT   : ['Walking']
+  Fired heads        : ['Walking']
+  Confirmed (TP)     : ['Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3719 | Activities(18) F1:0.5446 | Co-occ F1:1.000 | Retrains:14
+
+[65/68] 'Watering_Plants' (val:79 tr:79)
+
+  Co-occurrence GT   : ['Standing_With_Movement', 'Walking']
+  Fired heads        : ['Standing_With_Movement', 'Walking']
+  Confirmed (TP)     : ['Standing_With_Movement', 'Walking']
+  Missed    (FN)     : []
+  False pos (FP)     : []
+  Seeds F1:0.3719 | Activities(19) F1:0.5235 | Co-occ F1:1.000 | Retrains:14
+
+[Final] TEST — All Weighted F1:0.8448 | Seeds Weighted F1:0.4403 | Activities(19) Weighted F1:0.8748
+
+=================================================================
+ABLATION FINAL SUMMARY (Test Set)
+
+  [Baseline]
+    flags: sensor_gating=False  ME=False  retraining=False
+    All heads      (21) — AUC:0.9200  Weighted F1:0.8239
+    Seed heads     ( 2) — AUC:0.5662  Weighted F1:0.1254
+    Activity heads (19) — AUC:0.9572  Weighted F1:0.8756
+    Co-occ mean F1: 0.3684
+    Retraining events: 0
+
+  [Full HITL]
+    flags: sensor_gating=True  ME=True  retraining=True
+    All heads      (21) — AUC:0.9612  Weighted F1:0.8466
+    Seed heads     ( 2) — AUC:0.9638  Weighted F1:0.4510
+    Activity heads (19) — AUC:0.9609  Weighted F1:0.8759
+    Co-occ mean F1: 0.3509
+    Retraining events: 15
+
+  [Full HITL w/o ME]
+    flags: sensor_gating=True  ME=False  retraining=True
+    All heads      (21) — AUC:0.9599  Weighted F1:0.8462
+    Seed heads     ( 2) — AUC:0.9643  Weighted F1:0.4363
+    Activity heads (19) — AUC:0.9594  Weighted F1:0.8765
+    Co-occ mean F1: 0.3860
+    Retraining events: 15
+
+  [Full HITL w/o Retraining]
+    flags: sensor_gating=True  ME=True  retraining=False
+    All heads      (21) — AUC:0.9232  Weighted F1:0.8274
+    Seed heads     ( 2) — AUC:0.5662  Weighted F1:0.1254
+    Activity heads (19) — AUC:0.9607  Weighted F1:0.8793
+    Co-occ mean F1: 0.3684
+    Retraining events: 0
+
+  [Full HITL w/o Sensor Gating]
+    flags: sensor_gating=False  ME=True  retraining=True
+    All heads      (21) — AUC:0.9516  Weighted F1:0.8448
+    Seed heads     ( 2) — AUC:0.9641  Weighted F1:0.4403
+    Activity heads (19) — AUC:0.9502  Weighted F1:0.8748
+    Co-occ mean F1: 0.3860
+    Retraining events: 14
+
+Histories saved to /home/hle5/HITL_HAR/output/DS_10_e3_ablation_histories_late_fl.pkl
+
+Generating plots...
+  Saved: /home/hle5/HITL_HAR/figs/ablation/DS_10_abl_f1_trend_late_fl.png
+  Saved: /home/hle5/HITL_HAR/figs/ablation/DS_10_abl_final_metrics_late_fl.png
+  Saved: /home/hle5/HITL_HAR/figs/ablation/DS_10_abl_forgetting_late_fl.png
+  Saved: /home/hle5/HITL_HAR/figs/ablation/DS_10_abl_heatmap_late_fl.png
+Done.

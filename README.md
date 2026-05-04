@@ -1,8 +1,9 @@
 # HITL-HAR: Human-in-the-Loop Incremental Human Activity Recognition
 
-A plug-and-play framework for incrementally teaching a wearable sensor system new human activities with minimal user effort. Built on a frozen SimCLR self-supervised backbone with per-activity binary GatedHead classifiers.
+A plug-and-play framework for incrementally teaching a wearable sensor system new human activities with minimal user effort. Built on a frozen SimCLR self-supervised backbone with per-activity binary classifiers.
 
-**Paper**: *[title]* — submitted to IMWUT (ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies)
+**Paper**: *Human-in-the-loop Incremental Learning for Human Activity
+Recognition with Multimodal Wearable Sensors* — submitted to IMWUT (ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies)
 
 ---
 
@@ -66,14 +67,14 @@ Edit `configs/paths.json` and fill in your paths:
 {
   "data_dir":       "/absolute/path/to/your/dataset/",
   "working_dir":    "./output/",
-  "simclr_path":    "./models/your_simclr.pt",
+  "encoder_paths":  "./models/your_simclr.pt",
   "participants":   ["DS_11"],
   "dataset_config": "paaws_lab.json",
   "hparams_config": "hparams.json"
 }
 ```
 
-`data_dir` should be an absolute path. `working_dir`, `simclr_path`, and `figs_dir` can be relative — they resolve relative to the repo root regardless of where you invoke the script from.
+`data_dir` should be an absolute path. `working_dir`, `encoder_paths`, and `figs_dir` can be relative — they resolve relative to the repo root regardless of where you invoke the script from.
 
 ### 3. Validate your setup
 
@@ -265,7 +266,17 @@ Every `.pkl` has a sibling `_log.json` containing the complete config snapshot u
 ## Citation
 
 ```bibtex
-@article{...}
+@article{le2026hitlhar,
+  title     = {Human-in-the-loop Incremental Learning for Human Activity Recognition with Multimodal Wearable Sensors},
+  author    = {Le, Ha and Choube, Akshat and Kanel, Pranjal and Mishra, Varun and Intille, Stephen S.},
+  journal   = {Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
+  volume    = {},
+  number    = {},
+  pages     = {},
+  year      = {2026},
+  publisher = {ACM},
+  doi       = {}
+}
 ```
 
 ---
